@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "74197536133",
+    "firebase_url": "https://gestion-vtc-default-rtdb.firebaseio.com",
+    "project_id": "gestion-vtc",
+    "storage_bucket": "gestion-vtc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74197536133:android:06c6b8f31aed7d963c08ec",
+        "android_client_info": {
+          "package_name": "com.yapi.nolimitdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74197536133-qvrkoiu54qbtpuho3830sp22orbf7256.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yapi.nolimitdriver",
+            "certificate_hash": "922089da989ce154ac6233eeb6a6e3cbde2b5d8c"
+          }
+        },
+        {
+          "client_id": "74197536133-lrfhh7tbfqntf26h5jjahs8chsa8ee7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKgDULe6UKZFczvaqDmUBCxRcYxSBjDhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74197536133-lrfhh7tbfqntf26h5jjahs8chsa8ee7a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "74197536133-1nnaen04l6shjogd972n203shsj0o7da.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yapi.nolimitdriver"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
