@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_braintree/flutter_braintree.dart';
+//import 'package:flutter_braintree/flutter_braintree.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 //import 'package:flutter_paystack/flutter_paystack.dart';
 import 'package:flutter_paytabs_bridge/BaseBillingShippingInfo.dart' as payTab;
@@ -17,7 +17,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_fatoorah/my_fatoorah.dart';
 //import 'package:paytm/paytm.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+//import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:nolimit_pro/utils/Extensions/StringExtensions.dart';
 
 import '../../main.dart';
@@ -65,7 +65,7 @@ class PaymentScreenState extends State<PaymentScreen> {
   bool isTestType = true;
   bool loading = false;
   //final plugin = PaystackPlugin();
-  late Razorpay _razorpay;
+ // late Razorpay _razorpay;
   //CheckoutMethod method = CheckoutMethod.card;
 
   @override
@@ -86,12 +86,12 @@ class PaymentScreenState extends State<PaymentScreen> {
     /*if (paymentList.any((element) => element.type == PAYMENT_TYPE_PAYSTACK)) {
       plugin.initialize(publicKey: payStackPublicKey.validate());
     }*/
-    if (paymentList.any((element) => element.type == PAYMENT_TYPE_RAZORPAY)) {
+   /* if (paymentList.any((element) => element.type == PAYMENT_TYPE_RAZORPAY)) {
       _razorpay = Razorpay();
       _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
       _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
       _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
-    }
+    }*/
   }
 
   /// Get Payment Gateway Api Call
@@ -142,7 +142,7 @@ class PaymentScreenState extends State<PaymentScreen> {
   }
 
   /// Razor Pay
-  void razorPayPayment() {
+ /* void razorPayPayment() {
     var options = {
       'key': razorKey.validate(),
       'amount': (widget.amount! * 100).toInt(),
@@ -164,9 +164,9 @@ class PaymentScreenState extends State<PaymentScreen> {
       log(e.toString());
       debugPrint('Error: e');
     }
-  }
+  }*/
 
-  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+ /* void _handlePaymentSuccess(PaymentSuccessResponse response) {
     toast(language.transactionSuccessful);
     // Fluttertoast.showToast(msg: "SUCCESS: " + response.paymentId!, toastLength: Toast.LENGTH_SHORT);
     paymentConfirm();
@@ -179,7 +179,7 @@ class PaymentScreenState extends State<PaymentScreen> {
 
   void _handleExternalWallet(ExternalWalletResponse response) {
     Fluttertoast.showToast(msg: "EXTERNAL_WALLET: " + response.walletName!, toastLength: Toast.LENGTH_SHORT);
-  }
+  }*/
 
   /// StripPayment
   void stripePay() async {
@@ -305,7 +305,7 @@ class PaymentScreenState extends State<PaymentScreen> {
   }
 
   /// Paypal Payment
-  void payPalPayment() async {
+ /* void payPalPayment() async {
     final request = BraintreePayPalRequest(amount: widget.amount.toString(), currencyCode: appStore.currencyName.toUpperCase(), displayName: sharedPref.getString(USER_NAME));
     final result = await Braintree.requestPaypalNonce(
       payPalTokenizationKey!,
@@ -315,7 +315,7 @@ class PaymentScreenState extends State<PaymentScreen> {
       toast(language.transactionSuccessful);
       paymentConfirm();
     }
-  }
+  }*/
 
   /// FlutterWave Payment
   /*void flutterWaveCheckout() async {
@@ -607,17 +607,17 @@ class PaymentScreenState extends State<PaymentScreen> {
           child: AppButtonWidget(
             text: language.pay,
             onTap: () {
-              if (selectedPaymentType == PAYMENT_TYPE_RAZORPAY) {
+             /* if (selectedPaymentType == PAYMENT_TYPE_RAZORPAY) {
                 razorPayPayment();
-              } else if (selectedPaymentType == PAYMENT_TYPE_STRIPE) {
+              } else*/ if (selectedPaymentType == PAYMENT_TYPE_STRIPE) {
                 stripePay();
               }
              /* else if (selectedPaymentType == PAYMENT_TYPE_PAYSTACK) {
                 payStackPayment(context);
               } */
-              else if (selectedPaymentType == PAYMENT_TYPE_PAYPAL) {
+             /* else if (selectedPaymentType == PAYMENT_TYPE_PAYPAL) {
                 payPalPayment();
-              }
+              }*/
              /* else if (selectedPaymentType == PAYMENT_TYPE_FLUTTERWAVE) {
                 flutterWaveCheckout();
               } */

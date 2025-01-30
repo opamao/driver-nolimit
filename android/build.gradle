@@ -1,4 +1,4 @@
-buildscript {
+/*buildscript {
     ext.kotlin_version = '1.9.24'
 //    ext.kotlin_version = '1.8.20'
     repositories {
@@ -12,15 +12,15 @@ buildscript {
         classpath 'com.google.gms:google-services:4.4.2'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
     }
-}
+}*/
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
+        /*maven {
             url 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
+        }*/
     }
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
@@ -30,14 +30,12 @@ allprojects {
 }
 
 rootProject.buildDir = '../build'
-
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
     project.evaluationDependsOn(':app')
 }
-
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }

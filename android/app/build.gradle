@@ -32,15 +32,29 @@ if (flutterRoot == null) {
 //           keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 //     }
 android {
-    compileSdkVersion 34
-    ndkVersion flutter.ndkVersion
+    namespace 'com.yapi.nolimitdriver'
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion = "27.0.12077973"
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
     defaultConfig {
         applicationId "com.yapi.nolimitdriver"
-        minSdkVersion 23
-        targetSdkVersion 34
-        versionCode 19
-        versionName '3.0.0'
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
         multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
     }
 
     compileOptions {
@@ -52,22 +66,11 @@ android {
         jvmTarget = '1.8'
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-            minifyEnabled false
-            shrinkResources false
-        }
-    }
     packagingOptions {
         jniLibs {
             useLegacyPackaging true
         }
     }
-    namespace 'com.yapi.nolimitdriver'
 }
 
 flutter {
@@ -87,7 +90,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 //    implementation 'com.mercadopago.android.px:checkout:4.+'
     implementation 'io.card:android-sdk:5.5.1'
-    implementation 'com.braintreepayments.api:drop-in:5.4.0'
+ //   implementation 'com.braintreepayments.api:drop-in:5.4.0'
 //    implementation('com.braintreepayments.api:drop-in:6.16.0'){
 //        exclude group: "org.jfrog.cardinalcommerce.gradle", module: "cardinalmobilesdk"
 //    }

@@ -66,19 +66,14 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin firebase_storage, io.flutter.plugins.firebase.storage.FlutterFirebaseStoragePlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.example.flutter_braintree.FlutterBraintreePlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_braintree, com.example.flutter_braintree.FlutterBraintreePlugin", e);
-    }
-    try {
       flutterEngine.getPlugins().add(new com.pichillilorenzo.flutter_inappwebview_android.InAppWebViewFlutterPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_inappwebview_android, com.pichillilorenzo.flutter_inappwebview_android.InAppWebViewFlutterPlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.jayesh.flutter_contact_picker.FlutterContactPickerPlugin());
+      flutterEngine.getPlugins().add(new com.jayesh.flutter_native_contact_picker.FlutterNativeContactPickerPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_native_contact_picker, com.jayesh.flutter_contact_picker.FlutterContactPickerPlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_native_contact_picker, com.jayesh.flutter_native_contact_picker.FlutterNativeContactPickerPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new com.paymentsdk.flutter_paymentsdk_bridge.FlutterPaytabsBridgePlugin());
@@ -169,11 +164,6 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new com.baseflow.permissionhandler.PermissionHandlerPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin permission_handler_android, com.baseflow.permissionhandler.PermissionHandlerPlugin", e);
-    }
-    try {
-      flutterEngine.getPlugins().add(new com.razorpay.razorpay_flutter.RazorpayFlutterPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin razorpay_flutter, com.razorpay.razorpay_flutter.RazorpayFlutterPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());

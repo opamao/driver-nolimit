@@ -103,7 +103,7 @@ class SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(ic_logo_white, fit: BoxFit.contain, height: 150, width: 150),
             SizedBox(height: 16),
-            Text(language.appName, style: boldTextStyle(color: Colors.white, size: 22)),
+            Text("Nolimit Pro", style: boldTextStyle(color: Colors.white, size: 22)),
           ],
         ),
       ),
